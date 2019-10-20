@@ -1,1 +1,0 @@
-Selenium automation with python.

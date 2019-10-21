@@ -41,5 +41,5 @@ pip install -r requirements.txt
     └── test.py
 ```
 
-#### Example of the test runner report:
+### Test runner report example:
 ![alt text](tests/reports/report_example.png)

@@ -23,6 +23,7 @@ class CreateAccountPage(BasePage):
 
     def click_next_button(self):
         self.click(Locators.NEXT_BUTTON)
+        self.wait(seconds=2)
 
     def populate_all_fields(self, first_name, last_name, username, password, confirm):
         self.enter_first_name(first_name)

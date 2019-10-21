@@ -12,5 +12,3 @@ class AccountTestData:
     InvalidPasswordData = dict(firstname="John", lastname="Doe",
                                password=['a', 'a1'], username="python",
                                error="Пароль має містити щонайменше 8 символів")
-
-

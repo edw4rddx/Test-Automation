@@ -22,7 +22,6 @@ class BasePage:
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(locator)).send_keys(text)
 
-
     def assert_in_title(self, text):
         WebDriverWait(self.driver, 10).until(EC.title_contains(text))
         assert text in self.driver.title

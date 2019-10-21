@@ -2,10 +2,30 @@
 
 
 ### Install dependencies
-````
+```
 pip install -r requirements.txt
-````
-
+```
+### Repository tree
+```
+.
+├── README.md
+├── pages
+│   ├── base_page.py
+│   ├── create_account.py
+│   └── sign_in.py
+├── repo_tree.txt
+├── requirements.txt
+├── resources
+│   ├── data.py
+│   └── locators.py
+└── tests
+    ├── base_test.py
+    ├── reports
+    │   ├── TestResults___main__.TestAccountCreation_2019-10-20_21-58-48.html
+    │   ├── TestResults___main__.TestAccountCreation_2019-10-21_12-11-54.html
+    │   └── report_example.png
+    └── test.py
+```
 ### Create page objects:
 + Sign In page
 + Create Account page

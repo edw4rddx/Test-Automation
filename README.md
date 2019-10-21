@@ -1,5 +1,11 @@
 ## Google Account creation automation testing with Page Object model
 
+
+### Install dependencies
+````
+pip install -r requirements.txt
+````
+
 ### Create page objects:
 + Sign In page
 + Create Account page

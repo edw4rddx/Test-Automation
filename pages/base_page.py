@@ -15,16 +15,17 @@ class BasePage:
 
     def clear_textbox(self, locator):
         WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(locator)).clear()
+            EC.presence_of_element_located(locator)).clear()
 
     def enter_text(self, locator, text):
         self.clear_textbox(locator)
         WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(locator)).send_keys(text)
+            EC.presence_of_element_located(locator)).send_keys(text)
 
     def assert_in_title(self, text):
-        WebDriverWait(self.driver, 10).until(EC.title_contains(text))
-        assert text in self.driver.title
+        WebDriverWait(self.driver, 10).until(
+            EC.title_contains(text),
+            f"Actual title: {self.driver.title} is not equal to expected: {text}")
 
     def assert_in_source(self, text):
         assert text in self.driver.page_source

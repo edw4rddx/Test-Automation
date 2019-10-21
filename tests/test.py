@@ -30,13 +30,14 @@ class TestAccountCreation(BaseGoogleAccountCreation):
         self.sign_in_page.click_for_myself_button()
         # Transition to Create Account page object
         self.create_account_page = CreateAccountPage(self.driver)
-        data = AccountTestData.InvalidUsernameData
+        data = AccountTestData.INVALID_USERNAME_DATA
+        self.create_account_page.populate_all_fields(first_name=data['firstname'],
+                                                     last_name=data['lastname'],
+                                                     username='',
+                                                     password=data['password'],
+                                                     confirm=data['password'])
         for username in data['username']:
-            self.create_account_page.populate_all_fields(first_name=data['firstname'],
-                                                         last_name=data['lastname'],
-                                                         username=username,
-                                                         password=data['password'],
-                                                         confirm=data['password'])
+            self.create_account_page.enter_username(username)
             self.create_account_page.click_next_button()
             self.create_account_page.assert_in_source(data['error'])
 
@@ -46,12 +47,13 @@ class TestAccountCreation(BaseGoogleAccountCreation):
         self.sign_in_page.click_for_myself_button()
         # Transition to Create Account page object
         self.create_account_page = CreateAccountPage(self.driver)
-        data = AccountTestData.InvalidPasswordData
+        data = AccountTestData.INVALID_PASSWORD_DATA
+        self.create_account_page.populate_all_fields(first_name=data['firstname'],
+                                                     last_name=data['lastname'],
+                                                     username=data['username'],
+                                                     password='', confirm='')
         for password in data['password']:
-            self.create_account_page.populate_all_fields(first_name=data['firstname'],
-                                                         last_name=data['lastname'],
-                                                         username=data['username'],
-                                                         password=password, confirm=password)
+            self.create_account_page.enter_password(password)
             self.create_account_page.click_next_button()
             self.create_account_page.assert_in_source(data['error'])
 

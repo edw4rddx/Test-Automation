@@ -1,7 +1,7 @@
 class GeneralData:
     ACCOUNT_URL = "https://accounts.google.com"
     SIGN_IN_PAGE_TITLE = "Вхід – облікові записи Google"
-    CREATE_ACCOUNT_PAGE_TITLE = "Вхід – облікові записи Google"
+    CREATE_ACCOUNT_PAGE_TITLE = "Створити обліковий запис Google"
 
 
 class AccountTestData:
